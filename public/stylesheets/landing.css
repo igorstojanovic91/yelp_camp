@@ -1,0 +1,91 @@
+body {
+    background: black;
+}
+
+#landing-header {
+    z-index: 1; /* we have x and y axes and z is forward/backword, 1 it comes forword */
+    position: relative; /* must be relative, standard is static if not defined -> is positioned relativ to himself*/
+    text-align: center;
+    padding-top: 40vh; /*vh = view hight */
+}
+
+#landing-header h1 {
+    color: white;
+}
+
+.slideshow {
+    position: fixed; /*fixes the position of the slideshow */
+    width: 100%;
+    height: 100%;;
+    top: 0; /* moves it to the very top */
+    left: 0; /*  moves it to the very left*/
+    z-index: 0; /* makes show slideshow is behind all elements */
+    list-style: none; /* remove bulletpoints from listitems */
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* an absolute positioned element is relative to its parent.
+    An element with position: absolute is removed from the normal document flow. 
+    It is positioned automatically to the starting point (top-left corner) of its parent element. 
+    If it doesn’t have any parent elements, then the initial document <html> will be its parent.
+    Since position: absolute removes the element from the document flow, other elements are affected 
+    and behave as the element is removed completely from the webpage.
+    Like position: absolute, fixed positioned elements are also removed from the normal document flow. The differences are:
+    They are only relative to the <html> document, not any other parents.
+    They are not affected by scrolling.*/
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%; /* centers image perfectly on the page */
+    background-repeat: no-repeat; /* image is not repeated vertically or horizontally */
+    opacity: 0; /* invisible */
+    z-index: 0;
+    animation: imageAnimation 25s linear infinite; /* name of anmation does not matter (arbitrary, does to match), 50 seconds, linear (same speed from beginning to end), animation loop infinately (never aends)*/
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  animation-delay: 5s;  /* starts after 10 seconds */
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  animation-delay: 10s; ;  /* starts after 20 seconds */
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  animation-delay: 15s; ;  /* starts after 30 seconds */
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  animation-delay: 20s;  ;  /* starts after 40 seconds */
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0;  /* Start  animation at 0 and we let it fade in until 10% to a opacity of one */
+    animation-timing-function: ease-in; /* more smooth transition */
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out; /* more smooth transition */
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
+

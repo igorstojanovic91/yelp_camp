@@ -1,0 +1,46 @@
+.thumbnail {
+    padding: 0 !important;
+}
+
+
+.thumbnail img {
+    width: 100%;
+    max-height: 500px;
+    
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+#login-form {
+    margin-top: 40px;
+}
+
+.navbar {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.jumbotron {
+    background-image: url(https://images.unsplash.com/photo-1519095614420-850b5671ac7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500);
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+@media(max-width:767px){
+  .jumbotron {
+      padding-left: 10px;
+  }
+  .thumbnail {
+      text-align: center;
+  }
+}
+

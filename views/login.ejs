@@ -1,0 +1,21 @@
+<% include ./partials/header %> <!-- moves one directory back and enters the partials folder -->
+
+
+<div class="container"> 
+    <div class="row">
+        <div style="width: 30%; margin: 20px auto">
+        <h1 style="text-align: center">Login here!</h1>
+        
+        <form action="/login" method="POST" id="login-form">
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="username">
+            </div>
+            <div class="form-group">
+                <input class="form-control"type="password" name="password" placeholder="password">
+            </div>
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login!">
+        </form>
+    </div>
+</div>
+
+<% include ./partials/footer %> <!-- moves one directory back and enters the partials folder -->
